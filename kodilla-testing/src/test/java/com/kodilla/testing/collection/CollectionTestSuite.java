@@ -29,24 +29,34 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorEmptyList() {
         //Given
         ArrayList<Integer> allNumbers = new ArrayList<Integer>();
-        Random theGenerator = new Random();
-        for (int n = 0; n < 10; n++) {
-            allNumbers.add(theGenerator.nextInt(10) + 1);
-        }
-        OddNumbersExterminator onlyEven = new OddNumbersExterminator();
+        allNumbers.add(4);
+        allNumbers.add(2);
+        allNumbers.add(3);
+        allNumbers.add(4);
+        allNumbers.add(10);
+        allNumbers.add(7);
+        allNumbers.add(10);
+        allNumbers.add(8);
+        allNumbers.add(9);
+        allNumbers.add(9);
+
+        System.out.println("Rozmiar listy:" + allNumbers.size());
         System.out.println("Elementy listy przed filtrowaniem: " + allNumbers);
+
+        OddNumbersExterminator onlyEven = new OddNumbersExterminator();
         //When
         ArrayList<Integer> actualList = onlyEven.exterminate(allNumbers);
         System.out.println("Elementy listy po filtrowaniu: " + actualList);
-        //Then
-        //Powinnam porównać actualList, które są moją wartością aktualną uzyskaną z  etody z wartością oczekiwaną, którą nie wiem co jest?
-        //actualList jest typu ArrayList<Integer>, oczekiwana wartość też powinna być tego typu, więc stworzę sobie do niej nową listę expectedList
+
         ArrayList<Integer> expectedList = new ArrayList<Integer>();
-        for (Integer xxx : actualList){
-        if (xxx % 2 == 0) {
-            expectedList.add(xxx);
-        }
-        }
+        expectedList.add(4);
+        expectedList.add(2);
+        expectedList.add(4);
+        expectedList.add(10);
+        expectedList.add(10);
+        expectedList.add(8);
+
+        System.out.println("Rozmiar listy:" + expectedList.size());
         //Then
         Assert.assertEquals(expectedList, actualList);
     }
@@ -55,19 +65,17 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList() {
         //Given
         ArrayList<Integer> allNumbers = new ArrayList<Integer>();
-        OddNumbersExterminator onlyEven = new OddNumbersExterminator();
+        System.out.println("Rozmiar listy:" + allNumbers.size());
         System.out.println("Elementy listy przed filtrowaniem: " + allNumbers);
+        OddNumbersExterminator onlyEven = new OddNumbersExterminator();
+
         //When
         ArrayList<Integer> actualList = onlyEven.exterminate(allNumbers);
         System.out.println("Elementy listy po filtrowaniu: " + actualList);
         ArrayList<Integer> expectedList = new ArrayList<Integer>();
-        for (Integer xxx : actualList){
-            if (xxx % 2 == 0) {
-                expectedList.add(xxx);
-            }
-        }
+
         //Then
-        Assert.assertEquals(expectedList, actualList);
+        Assert.assertEquals(expectedList.size(), actualList.size());
 
     }
 
