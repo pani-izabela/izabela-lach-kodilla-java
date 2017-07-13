@@ -5,7 +5,7 @@ import com.kodilla.testing.user.SimpleUser;
 
 public class TestingMain {
     public static void main(String[] args){
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+        /*SimpleUser simpleUser = new SimpleUser("theForumUser");
 
         String result = simpleUser.getUsername();
 
@@ -29,7 +29,7 @@ public class TestingMain {
             System.out.println("Dodawanie działa! OK");
         } else {
             System.out.println("Dodawanie nie działa! Error");
-        }
+        }*/
 
     }
 }
