@@ -9,8 +9,8 @@ public class ShapeCollector {
 
     }
 
-    public void removeFigure(Figure figure){
-
+    public boolean removeFigure(Figure figure){
+        return true;
     }
 
     public void schowFigures(){
