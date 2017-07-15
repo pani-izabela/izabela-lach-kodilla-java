@@ -5,7 +5,7 @@ import java.lang.*;
 public class Circle extends Figure implements Shape{
     private int r;
 
-    public Circle(String nameFigure, int r, double circleArea) {
+    public Circle(String nameFigure, int r) {
         super(nameFigure);
         this.r = r;
     }

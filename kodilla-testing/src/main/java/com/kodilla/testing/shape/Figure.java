@@ -2,7 +2,7 @@ package com.kodilla.testing.shape;
 
 
 abstract class Figure implements Shape{
-    String nameFigure;
+    private String nameFigure;
 
     public Figure(String nameFigure) {
         this.nameFigure = nameFigure;

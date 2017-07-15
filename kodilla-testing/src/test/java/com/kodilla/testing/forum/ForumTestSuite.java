@@ -20,6 +20,7 @@ public class ForumTestSuite {
     public static void afterClass() {
         System.out.println("Test Suite: end");
     }
+
     @Test
     public void testCaseUsername(){
         //Given
@@ -39,5 +40,34 @@ public class ForumTestSuite {
         System.out.println("Testing " + result);
         //Then
         Assert.assertEquals("John Smith", result);
+    }
+
+    @Test
+    public void testAddPost() {
+        //Given
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+
+        //When
+        forumUser.addPost("mrsmith",
+                "Hello everyone, this is my first contribution here!");
+
+        //Then
+        Assert.assertEquals(1, forumUser.getPostsQuantity());
+    }
+
+    @Test
+    public void testRemovePost() {
+        //Given
+        ForumUser forumUser = new ForumUser("mrsmith", "John Smith");
+        ForumPost thePost = new ForumPost("Hello everyone, " +
+                "this is my first contribution here!", "mrsmith");
+        forumUser.addPost(thePost.getAuthor(), thePost.getPostBody());
+
+        //When
+        boolean result = forumUser.removePost(thePost);
+
+        //Then
+        Assert.assertTrue(result);
+        Assert.assertEquals(0, forumUser.getPostsQuantity());
     }
 }
