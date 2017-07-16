@@ -59,7 +59,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void removeFigureCircle(){
+    public void removeFigureCircleNotExisting(){
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Circle circle = new Circle("Circle", 10);
@@ -70,7 +70,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void removeFigureSquare(){
+    public void removeFigureSquareNotExisting(){
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Square square = new Square("Square", 4);
@@ -81,7 +81,7 @@ public class ShapeCollectorTestSuite {
     }
 
     @Test
-    public void removeFigureTriangle(){
+    public void removeFigureTriangleNotExisting(){
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Triangle triangle = new Triangle("Triangle", 4, 3);
@@ -89,6 +89,19 @@ public class ShapeCollectorTestSuite {
         boolean result = shapeCollector.removeFigure(triangle);
         //Then
         Assert.assertFalse(result);
+    }
+    @Test
+    public void testRemoveTriangle() {
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+        Triangle triangle = new Triangle("Triangle", 4, 3);
+        shapeCollector.addFigure(triangle);
+
+        //When
+        boolean result = shapeCollector.removeFigure(triangle);
+
+        //Then
+        Assert.assertTrue(result);
     }
 
 

@@ -14,6 +14,11 @@ public class Circle extends Figure implements Shape{
         return r;
     }
 
+    @Override
+    public String toString() {
+        return ("Figure: " + getFigureName() + ", Field: " + getField());
+    }
+
     public double getField(){
         return (Math.PI*r*r);
     }
