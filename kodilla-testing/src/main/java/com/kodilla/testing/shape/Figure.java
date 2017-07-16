@@ -8,6 +8,11 @@ abstract class Figure implements Shape{
         this.nameFigure = nameFigure;
     }
 
+    @Override
+    public String toString() {
+        return ("Figure: " + getFigureName() + ", Field: " + getField());
+    }
+
     public String getNameFigure() {
         return nameFigure;
     }

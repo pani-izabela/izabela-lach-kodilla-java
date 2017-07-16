@@ -18,6 +18,11 @@ public class Triangle extends Figure implements Shape{
         return height;
     }
 
+    @Override
+    public String toString() {
+        return ("Figure: " + getFigureName() + ", Field: " + getField());
+    }
+
     public double getField(){
         return (base*height)/2;
     }
