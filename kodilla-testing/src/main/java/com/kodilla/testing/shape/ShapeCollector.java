@@ -19,7 +19,7 @@ public class ShapeCollector {
     }
 
     public String showFigures(){
-        String figurePresentation = null;
+        String figurePresentation = "";
         for (Figure figure : figures) {
             figurePresentation = "Figure: " + figure.getFigureName() + ", Field: " + figure.getField();
         }
