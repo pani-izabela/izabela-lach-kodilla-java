@@ -5,7 +5,7 @@ package com.kodilla.testing.forum.statistics;
  */
 public class ForumStatisticsTestSuite {
 
-    public int calculateAdvStatistics(Statistics statistics){
+    public void testCalculateAdvStatistics(Statistics statistics){
 
     }
 }
