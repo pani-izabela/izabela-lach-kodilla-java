@@ -99,7 +99,7 @@ public class ForumStatisticsTestSuite {
 
         //Then
         int quantityOfPosts = forumStatistics.getQuantityPosts();
-        Assert.assertEquals(1000, quantityOfPosts);
+        Assert.assertEquals(0, quantityOfPosts);
 
     }
 

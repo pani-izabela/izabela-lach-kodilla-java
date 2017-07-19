@@ -42,9 +42,26 @@ public class ForumStatistics {
         this.quantityUsers = statistics.usersNames().size();
         this.quantityPosts = statistics.postsCount();
         this.quantityComments = statistics.commentsCount();
-        this.avarageQuantityPostsUser = (statistics.postsCount() / statistics.usersNames().size());
-        this.avarageQuantityCommentsUser = (statistics.commentsCount() / statistics.usersNames().size());
-        this.avarageQuantityCommentsPost = (statistics.commentsCount() / statistics.postsCount());
+
+        if (statistics.usersNames().size() == 0){
+            this.avarageQuantityPostsUser = 0;
+        }
+        else {
+            this.avarageQuantityPostsUser = (statistics.postsCount() / statistics.usersNames().size());
+        }
+
+        if (statistics.usersNames().size() == 0){
+            this.avarageQuantityCommentsUser = 0;
+        }
+        else {
+            this.avarageQuantityCommentsUser = (statistics.commentsCount() / statistics.usersNames().size());
+        }
+
+        if (statistics.postsCount() == 0){
+            this.avarageQuantityCommentsPost = 0;
+        }
+        else {
+            this.avarageQuantityCommentsPost = (statistics.commentsCount() / statistics.postsCount());}
     }
 
     public String ShowStatistics(){
