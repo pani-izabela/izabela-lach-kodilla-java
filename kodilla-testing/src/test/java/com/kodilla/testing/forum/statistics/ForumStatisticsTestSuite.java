@@ -24,12 +24,20 @@ public class ForumStatisticsTestSuite {
         listNamesUsers.add("Ola");
         when(statisticsMock.usersNames()).thenReturn(listNamesUsers);
 
+        int posts = 10;
+        when(statisticsMock.postsCount()).thenReturn(posts);
+
+        int comments = 30;
+        when(statisticsMock.commentsCount()).thenReturn(comments);
+
         ForumStatistics forumStatistics = new ForumStatistics();
 
         //When
+        int quantityOfUsers = forumStatistics.getQuantityUsers();
 
 
         //Then
+        Assert.assertEquals(5, quantityOfUsers);
 
     }
 }
