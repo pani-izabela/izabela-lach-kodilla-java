@@ -1,6 +1,8 @@
 package com.kodilla.testing.forum.statistics;
 
 
+import java.util.List;
+
 public class ForumStatistics {
     int quantityUsers;
     int quantityPosts;
@@ -46,7 +48,14 @@ public class ForumStatistics {
     }
 
     public String ShowStatistics(){
-        return null;
+        //ForumStatistics statistics = new ForumStatistics();
+        String allProperties = ("Liczba użytkowników: " + getQuantityUsers() +
+                " Liczba postów: " + getQuantityPosts() +
+                " Liczba komentarzy: " + getQuantityComments() +
+                " Srednia liczba postów na użytkownika: " + getAvarageQuantityPostsUser() +
+                " Srednia liczba komentarzy na użytkownika: " + getAvarageQuantityCommentsUser() +
+                " Srednia liczba komentarzy na post: " + getAvarageQuantityCommentsPost());
+        return allProperties;
     }
 
 }
