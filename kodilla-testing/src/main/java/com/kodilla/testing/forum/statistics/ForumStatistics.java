@@ -45,15 +45,10 @@ public class ForumStatistics {
 
         if (statistics.usersNames().size() == 0){
             this.avarageQuantityPostsUser = 0;
-        }
-        else {
-            this.avarageQuantityPostsUser = (statistics.postsCount() / statistics.usersNames().size());
-        }
-
-        if (statistics.usersNames().size() == 0){
             this.avarageQuantityCommentsUser = 0;
         }
         else {
+            this.avarageQuantityPostsUser = (statistics.postsCount() / statistics.usersNames().size());
             this.avarageQuantityCommentsUser = (statistics.commentsCount() / statistics.usersNames().size());
         }
 
