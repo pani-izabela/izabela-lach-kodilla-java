@@ -37,12 +37,12 @@ public class ForumStatistics {
     }
 
     public void calculateAdvStatistics(Statistics statistics) {
-        int quantityUsers = statistics.usersNames().size();
-        int quantityPosts = statistics.postsCount();
-        int quantityComments = statistics.commentsCount();
-        double avarageQuantityPostsUser = (statistics.postsCount() / statistics.usersNames().size());
-        double avarageQuantityCommentsUser = (statistics.commentsCount() / statistics.usersNames().size());
-        double avarageQuantityCommentsPost = (statistics.commentsCount() / statistics.postsCount());
+        this.quantityUsers = statistics.usersNames().size();
+        this.quantityPosts = statistics.postsCount();
+        this.quantityComments = statistics.commentsCount();
+        this.avarageQuantityPostsUser = (statistics.postsCount() / statistics.usersNames().size());
+        this.avarageQuantityCommentsUser = (statistics.commentsCount() / statistics.usersNames().size());
+        this.avarageQuantityCommentsPost = (statistics.commentsCount() / statistics.postsCount());
     }
 
     public String ShowStatistics(){
