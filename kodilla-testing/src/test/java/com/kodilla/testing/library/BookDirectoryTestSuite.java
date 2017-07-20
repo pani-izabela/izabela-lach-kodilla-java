@@ -23,8 +23,8 @@ public class BookDirectoryTestSuite {
         return resultList;
     }
 
-    @Test
     //ten test sprawdzi czy lista książek spełniających warunek wyszukiwania jest poprawnie zwracana
+    @Test
     public void testListBooksWithConditionsReturnList() {
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
@@ -47,9 +47,9 @@ public class BookDirectoryTestSuite {
         assertEquals(4, theListOfBooks.size());
     }
 
-    @Test
     //ten test posłuży do sprawdzenia czy metoda listBooksWithCondition(String titleFragment) zachowuje się poprawnie gdy ilość tytułów
     // pasujących do wzorca jest większa niż 20 - w tej sytuacji zwracana powinna być pusta lista.
+    @Test
     public void testListBooksWithConditionMoreThan20() {
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
@@ -74,8 +74,8 @@ public class BookDirectoryTestSuite {
         assertEquals(0, theListOfBooks40.size());
     }
 
-    @Test
     //sprawdzenie czy zwracana lista książek jest pusta, w sytuacji gdy wyszukiwany fragment tytułu jest krótszy niż trzy znaki.
+    @Test
     public void testListBooksWithConditionFragmentShorterThan3() {
         // Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);

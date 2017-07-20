@@ -13,9 +13,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class BookBorrowedTestSuite {
-    @Test
     //ten test posłuży do sprawdzenia czy metoda listBooksInHands(LibraryUser libraryUser) zachowuje się poprawnie gdy ilość książek
     // wypozyczonych = 0
+    @Test
     public void listBooksInHandsLess(){
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
@@ -33,9 +33,9 @@ public class BookBorrowedTestSuite {
         assertEquals(0, theListOfBooksBorrowed.size());
     }
 
-    @Test
     //ten test posłuży do sprawdzenia czy metoda listBooksInHands(LibraryUser libraryUser) zachowuje się poprawnie gdy ilość książek
     // wypozyczonych = 1
+    @Test
     public void listBooksInHandsOne(){
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
@@ -55,9 +55,9 @@ public class BookBorrowedTestSuite {
         assertEquals(1, theListOfBooksBorrowed.size());
     }
 
-    @Test
     //ten test posłuży do sprawdzenia czy metoda listBooksInHands(LibraryUser libraryUser) zachowuje się poprawnie gdy ilość książek
     // wypozyczonych = 5
+    @Test
     public void listBooksInHandsFive(){
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
