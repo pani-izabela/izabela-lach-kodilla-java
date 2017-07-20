@@ -16,7 +16,7 @@ public class BookBorrowedTestSuite {
     //ten test posłuży do sprawdzenia czy metoda listBooksInHands(LibraryUser libraryUser) zachowuje się poprawnie gdy ilość książek
     // wypozyczonych = 0
     @Test
-    public void listBooksInHandsLess(){
+    public void listBooksInHandsLessZero(){
         //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
