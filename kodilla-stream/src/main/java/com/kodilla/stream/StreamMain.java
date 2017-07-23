@@ -2,12 +2,12 @@ package com.kodilla.stream;
 
 //import com.kodilla.stream.lambda.SaySomething;
 import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.beautifier.PoemDecorator;
 import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.Executor;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.lambda.Processor;
 import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.person.People;
 
 import static java.awt.SystemColor.text;
 
@@ -60,14 +60,29 @@ public class StreamMain {
 
         PoemBeautifier poemBeautifier2 = new PoemBeautifier();
         poemBeautifier2.beautify("Nikt się nie dowie, ", (text) -> text.toUpperCase());
+        //PoemBeautifier poemBeautifier2 = new PoemBeautifier();
+        //PoemDecorator poemDecorator = (text) -> text.toUpperCase();
+        //poemBeautifier2.beautify("Nikt się nie dowie, ", poemDecorator);
 
         PoemBeautifier poemBeautifier3 = new PoemBeautifier();
-        poemBeautifier2.beautify("Jako smakujesz,", (text) -> text.replace(text , "Jajo posmakujesz"));
+        poemBeautifier3.beautify("Jako smakujesz,", (text) -> text.replace(text , "Jajo posmakujesz"));
+        //PoemBeautifier poemBeautifier3 = new PoemBeautifier();
+        //PoemDecorator poemDecorator1 = (text) -> text.replace(text , "Jajo posmakujesz");
+        //poemBeautifier3.beautify("Jako smakujesz,", poemDecorator1);
 
         PoemBeautifier poemBeautifier4 = new PoemBeautifier();
         poemBeautifier4.beautify("I się zepsujesz.", (text) -> text.concat(" / autor: Jan Kochanowski :)"));
 
         System.out.println("Using Stream to generate even numbers from 1 to 20");
         NumbersGenerator.generateEven(20);
+
+        //----------------------------------------7.3---------------------------------------------------
+        People.getList().stream()
+                .map(String::toUpperCase)
+                .filter(s -> s.length() > 11)
+                .forEach(System.out::println);
+                .map(s -> s.substring(0, s.indexOf(' ') + 2) + ".");
+                .filter(s -> s.substring(0, 1).equals("M"));
+                .forEach(System.out::println);
     }
 }
