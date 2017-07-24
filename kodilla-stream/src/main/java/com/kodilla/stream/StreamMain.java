@@ -3,7 +3,7 @@ package com.kodilla.stream;
 //import com.kodilla.stream.lambda.SaySomething;
 import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.forum.Forum;
-import com.kodilla.stream.forum.ForumUser;
+import com.kodilla.stream.forum.UserOfForum;
 import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.Executor;
 import com.kodilla.stream.lambda.ExpressionExecutor;
@@ -12,11 +12,9 @@ import com.kodilla.stream.reference.FunctionalCalculator;
 import com.kodilla.stream.person.People;
 import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.book.Book;
-import java.util.List;
+
 import java.util.stream.Collectors;
 import java.util.Map;
-
-import static javafx.scene.input.KeyCode.M;
 
 public class StreamMain {
     public static void main(String[] args) {
@@ -126,12 +124,12 @@ public class StreamMain {
         //-----------------------------ZADANIE 7.3 ----------------------------
 
         Forum forum = new Forum();
-        Map<Integer, ForumUser> resultMapOfUsers = forum.getUserList().stream()
+        Map<Integer, UserOfForum> resultMapOfUsers = forum.getUserList().stream()
                 //.filter(forumUser -> forumUser.getNameUser().equals("Iza"))
-                //.filter(forumUser -> forumUser.getSex().compareTo('M'))
+                //.filter(userOfForum -> userOfForum.getSex().compareTo('M'))
                 //.filter(forumUser -> forumUser.getDateOfBirth() < 1997-12-31)
-                .filter(forumUser -> forumUser.getPosts()>0)
-                .collect(Collectors.toMap(ForumUser::getUserId, forumUser -> forumUser));
+                .filter(userOfForum -> userOfForum.getPosts()>0)
+                .collect(Collectors.toMap(UserOfForum::getUserId, userOfForum -> userOfForum));
 
         System.out.println("Liczba elementów: " + resultMapOfUsers.size());
         resultMapOfUsers.entrySet().stream()
