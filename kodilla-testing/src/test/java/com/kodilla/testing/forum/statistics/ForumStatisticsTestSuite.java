@@ -30,7 +30,7 @@ public class ForumStatisticsTestSuite {
         int comments = 30;
         when(statisticsMock.commentsCount()).thenReturn(comments);
 
-        //When
+        //When - wywołuję metodę, którą testuję
         ForumStatistics forumStatistics = new ForumStatistics();
         forumStatistics.calculateAdvStatistics(statisticsMock);
 
