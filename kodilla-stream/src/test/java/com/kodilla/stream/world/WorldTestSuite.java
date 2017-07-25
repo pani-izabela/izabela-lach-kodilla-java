@@ -10,6 +10,12 @@ public class WorldTestSuite {
     @Test
     public void testGetPeopleQuantity(){
         //Given
+        // powinnam mieć listę kontynentów (kontynent1=europe, kontynent2=asia, kontynent3=america)
+        List<World> continents = new ArrayList<World>();//lista kontynentów
+
+        //powinnam mieć listę krajów(w parametrze liczba ludności), z których każdy będzie przypisany do kontynentu
+        List<Continent> countries = new ArrayList<Continent>();//lista krajów
+
 
         //When
 
