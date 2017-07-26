@@ -10,20 +10,49 @@ public class WorldTestSuite {
     @Test
     public void testGetPeopleQuantity(){
         //Given
-        World europe = new World();
-        europe.addContinent(new Continent(new Country("987654321987654321")));
-        europe.addContinent(new Continent(new Country("22222222222222222222")));
-        europe.addContinent(new Continent(new Country("333333333333333333333333")));
+        World world = new World();
+        Continent europe = new Continent();
+        Country poland = new Country(new BigDecimal("37950000"));
+        Country germany = new Country(new BigDecimal("82670000"));
+        Country france = new Country(new BigDecimal("66900000"));
 
-        World asia = new World();
-        asia.addContinent(new Continent(new Country()));
+        europe.addCountry(poland);
+        europe.addCountry(germany);
+        europe.addCountry(france);
 
-        World americaN = new World();
-        americaN.addContinent(new Continent(new Country()));
+        world.addContinent(europe);
 
+        Continent asia = new Continent();
+        Country russia = new Country(new BigDecimal("142355415"));
+        Country china = new Country(new BigDecimal("1373541278"));
+        Country india = new Country(new BigDecimal("1266883598"));
+
+        asia.addCountry(russia);
+        asia.addCountry(china);
+        asia.addCountry(india);
+
+        world.addContinent(asia);
+
+        Continent americaN = new Continent();
+        Country usa = new Country(new BigDecimal("308878120"));
+        Country kanada = new Country(new BigDecimal("33989040"));
+        Country meksyk = new Country(new BigDecimal("107563903"));
+
+        americaN.addCountry(usa);
+        americaN.addCountry(kanada);
+        americaN.addCountry(meksyk);
+
+        world.addContinent(americaN);
 
         //When
+        BigDecimal totalPeople = BigDecimal.ZERO;
+        totalPeople = world.getPeopleQuantity();
+        /*for (World allWorld : world){
+            totalPeople = totalPeople.add(world.getPeopleQuantity());
+        }*/
 
         //Then
+        BigDecimal expectedQuantityOfPeople = new BigDecimal("3420731354");
+        Assert.assertEquals(expectedQuantityOfPeople, totalPeople);
     }
 }
