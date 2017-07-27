@@ -138,6 +138,24 @@ public class BoardTestSuite {
 
     @Test
     public void testAddTaskListAverageWorkingOnTask(){
+        //Given
+        Board project = prepareTestData();
+
+        //When
+        List<TaskList> inProgressTasks = new ArrayList<>();
+        inProgressTasks.add(new TaskList("In progress"));
+        double averageTasks = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(t -> t.getCreated())//transformacja z wejściowego strumienia zadań w strumień typu LocalDate
+                .map(d -> (LocalDate.now() - d.getCreated()))//powinnam mieć w strumieniu
+                //liczby będącą wynikiem odejmowania LocalDate.now (daty bieżącej) minus LocalDate.getCreated (datę zlecenia)
+                //jednak nie wiem jak to zapisać...
+                .average();
+
+
+        //Then
+        Assert.assertEquals(8.333 ,averageTasks, 0.001);
 
     }
 
