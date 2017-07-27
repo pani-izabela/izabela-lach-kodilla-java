@@ -47,9 +47,7 @@ public class WorldTestSuite {
         //When
         BigDecimal totalPeople = BigDecimal.ZERO;
         totalPeople = world.getPeopleQuantity();
-        /*for (World allWorld : world){
-            totalPeople = totalPeople.add(world.getPeopleQuantity());
-        }*/
+
 
         //Then
         BigDecimal expectedQuantityOfPeople = new BigDecimal("3420731354");
