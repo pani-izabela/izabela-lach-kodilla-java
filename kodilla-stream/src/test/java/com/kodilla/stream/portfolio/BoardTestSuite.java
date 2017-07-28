@@ -3,6 +3,7 @@ package com.kodilla.stream.portfolio;
 import org.junit.Assert;
 import org.junit.Test;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -148,11 +149,9 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(t -> t.getCreated())//transformacja z wejściowego strumienia zadań w strumień typu LocalDate
-                .map(d -> d.(LocalDate.now().minusDays())
-                        //(LocalDate.now() - d.getCreated()))//powinnam mieć w strumieniu LocalDate.now().minusDays()
-                //liczby będącą wynikiem odejmowania LocalDate.now (daty bieżącej) minus LocalDate.getCreated (datę zlecenia)
-                //jednak nie wiem jak to zapisać...
-                .average().getAsDOuble();
+                .map(created -> Period.between(created, LocalDate.now()).getDays())//transformacja na int
+                .mapToInt(d -> d)//transformacja strumienia intów stream na IntStream, bo tylko do IntStream możemy zastosować avarage. Do stream już nie.
+                .average().getAsDouble();
 
 
         //Then
