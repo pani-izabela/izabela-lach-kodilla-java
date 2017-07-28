@@ -148,14 +148,15 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(t -> t.getCreated())//transformacja z wejściowego strumienia zadań w strumień typu LocalDate
-                .map(d -> (LocalDate.now() - d.getCreated()))//powinnam mieć w strumieniu
+                .map(d -> d.(LocalDate.now().minusDays())
+                        //(LocalDate.now() - d.getCreated()))//powinnam mieć w strumieniu LocalDate.now().minusDays()
                 //liczby będącą wynikiem odejmowania LocalDate.now (daty bieżącej) minus LocalDate.getCreated (datę zlecenia)
                 //jednak nie wiem jak to zapisać...
-                .average();
+                .average().getAsDOuble();
 
 
         //Then
-        Assert.assertEquals(8.333 ,averageTasks, 0.001);
+        Assert.assertEquals(10 ,averageTasks, 0.001);
 
     }
 
