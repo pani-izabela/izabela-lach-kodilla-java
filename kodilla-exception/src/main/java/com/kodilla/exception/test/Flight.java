@@ -11,18 +11,4 @@ public class Flight {
         return departureAirport;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Flight)) return false;
-
-        Flight flight = (Flight) o;
-
-        return departureAirport.equals(flight.departureAirport);
-    }
-
-    @Override
-    public int hashCode() {
-        return departureAirport.hashCode();
-    }
 }

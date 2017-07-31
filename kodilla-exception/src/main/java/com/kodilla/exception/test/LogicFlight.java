@@ -5,30 +5,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LogicFlight {
-    public String findFilght(Flight flight) throws RouteNotFoundException {
-        Map<String, Boolean> flightsMap = new HashMap<String, Boolean>();
-        flightsMap.put("Lotnisko Chopina w Warszawie", true);
-        flightsMap.put("Kraków Airport im. Jana Pawła II", true);
-        flightsMap.put("Port lotniczy Gdańsk im. Lecha Wałęsy", false);
-        flightsMap.put("Międzynarodowy Port Lotniczy Katowice w Pyrzowicach", false);
+    private Map<String, Boolean> flightsMap = new HashMap<String, Boolean>();
 
-        /*for (Map.Entry<String, Boolean> airports : flightsMap.entrySet()) {
-            if (airports.getKey().equals(flight.getDepartureAirport())) {
-                System.out.println(airports.getKey() + " prawda");
-            } else {
-                System.out.println(airports.getKey() + " fałsz");
-            }
-        }*/
-        for (Map.Entry<String, Boolean> airports : flightsMap.entrySet()) {
-            if (airports.getKey().equals(flight.getDepartureAirport())== false) {
-                throw new RouteNotFoundException();
-            }
-        }
+    public LogicFlight(Map<String, Boolean> flightsMap) {
+        this.flightsMap = flightsMap;
+    }
 
-        /*if (flightsMap.containsKey(flight.getDepartureAirport())) {
+    public Boolean findFilght(Flight flight) throws RouteNotFoundException {
+        Boolean flightMap = this.flightsMap.get(flight.getDepartureAirport());
+        if (flightMap == null) {
             throw new RouteNotFoundException();
-        }*/
-        return "Można lecieć na to lotnikso!";
-
+        }
+        else {
+            System.out.println("Można lecieć na to lotnisko.");
+        }
+        return flightMap;
     }
 }
+
