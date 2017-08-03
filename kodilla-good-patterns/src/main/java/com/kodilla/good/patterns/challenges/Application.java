@@ -10,7 +10,8 @@ public class Application {
         Map<String, List<String>> mapMovies = movieStore.getMovies();
         String titles = mapMovies.entrySet().stream()
                 .flatMap(keyPlusValue -> keyPlusValue.getValue().stream())
-                //.collect(Collectors.joining(" "," ! "," ! "));
+                .collect(Collectors.joining(" ! "," ! "," ! "));
+        System.out.println(titles);
 
     }
 }
