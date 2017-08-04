@@ -7,6 +7,6 @@ public class OrderRequestRetriever {
 
     LocalDateTime orderDate = LocalDateTime.of(2017, 8, 3, 23, 50);
 
-    return new OrderRequest(user, orderDate);
+    //return new OrderRequest(user, orderDate);
 
 }

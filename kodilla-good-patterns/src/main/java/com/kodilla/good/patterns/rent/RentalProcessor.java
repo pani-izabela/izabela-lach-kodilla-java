@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.rent;
 
-public class RentalProcessor {
+public class RentalProcessor{
     private InformationService informationService;
     private RentalService rentalService;
     private RentalRepository rentalRepository;

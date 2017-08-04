@@ -1,7 +1,11 @@
 package com.kodilla.good.patterns.rent;
 
-/**
- * Created by 430 on 2017-08-03.
- */
-public class CarRentalRepository {
+
+import java.time.LocalDateTime;
+
+public class CarRentalRepository implements RentalRepository {
+    @Override
+    public void createRental(User user, LocalDateTime from, LocalDateTime to) {
+
+    }
 }
