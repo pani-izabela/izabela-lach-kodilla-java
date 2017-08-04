@@ -1,7 +1,7 @@
 package com.kodilla.good.patterns.challenges;
 
-/**
- * Created by 430 on 2017-08-03.
- */
+import java.time.LocalDateTime;
+
 public interface OrderService {
+    public boolean order(Product product, User user, LocalDateTime dateOrder);
 }
