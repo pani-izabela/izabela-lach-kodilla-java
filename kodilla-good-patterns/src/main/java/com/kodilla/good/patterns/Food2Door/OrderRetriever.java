@@ -9,6 +9,6 @@ public class OrderRetriever {
         GlutenFreeShop glutenFreeShop = new GlutenFreeShop();
         LocalDateTime date = LocalDateTime.of(2017, 8, 3, 11, 50);
 
-        return new Order(product, customer, glutenFreeShop, date);
+        return new Order(product, customer, date);
     }
 }
