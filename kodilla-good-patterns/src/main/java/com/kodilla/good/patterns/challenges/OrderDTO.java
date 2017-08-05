@@ -14,5 +14,5 @@ public class OrderDTO {
     public Product getProduct(){return product;}
     public User getUser(){return user;}
 
-    public boolean isRented(){return isOrdered;}
+    public boolean idOrdered(){return isOrdered;}
 }
