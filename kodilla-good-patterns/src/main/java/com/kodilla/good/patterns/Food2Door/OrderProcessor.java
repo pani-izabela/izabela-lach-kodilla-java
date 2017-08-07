@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.Food2Door;
 
-
-
 public class OrderProcessor {
     private Producer producer;
 
@@ -9,7 +7,10 @@ public class OrderProcessor {
         this.producer = producer;
     }
 
-    public Order process(){
-        boolean isOrdered = producer.process();
+    public Order process(Order order){
+        producer.process(order.getProduct());
+        order.setProcessed(true);
+
+        return order;
     }
 }
