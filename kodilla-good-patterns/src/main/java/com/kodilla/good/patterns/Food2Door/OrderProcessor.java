@@ -9,5 +9,7 @@ public class OrderProcessor {
         this.producer = producer;
     }
 
-
+    public Order process(){
+        boolean isOrdered = producer.process();
+    }
 }
