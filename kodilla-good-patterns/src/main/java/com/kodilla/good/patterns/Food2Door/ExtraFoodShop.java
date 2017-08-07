@@ -5,6 +5,10 @@ import java.util.HashMap;
 public class ExtraFoodShop implements Producer{
     private HashMap<Product, Integer> productsExtraFood;
 
+    public ExtraFoodShop(HashMap<Product, Integer> productsExtraFood) {
+        this.productsExtraFood = productsExtraFood;
+    }
+
     @Override
     public void process(Product product) {
         System.out.println("Zamówienie złożone w sklapie ExtraFoodShop");
