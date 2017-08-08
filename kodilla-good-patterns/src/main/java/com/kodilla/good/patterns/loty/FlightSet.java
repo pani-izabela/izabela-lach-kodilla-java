@@ -17,4 +17,5 @@ public class FlightSet {
     public boolean removeFlight(Flight flight) {
         return flightSet.remove(flight);
     }
+
 }

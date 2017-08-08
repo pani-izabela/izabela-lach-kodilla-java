@@ -1,14 +1,14 @@
 package com.kodilla.good.patterns.loty;
 
-import com.kodilla.good.patterns.challenges.LocalDataTime;
+import java.time.LocalDateTime;
 
 public class Flight {
     private String nameFlight;
     private String departureTown;
     private String arrivalTown;
-    private LocalDataTime dateDeparture;
+    private LocalDateTime dateDeparture;
 
-    public Flight(String nameFlight, String departureTown, String arrivalTown, LocalDataTime dateDeparture) {
+    public Flight(String nameFlight, String departureTown, String arrivalTown, LocalDateTime dateDeparture) {
         this.nameFlight = nameFlight;
         this.departureTown = departureTown;
         this.arrivalTown = arrivalTown;
@@ -27,8 +27,16 @@ public class Flight {
         return arrivalTown;
     }
 
-    public LocalDataTime getDateDeparture() {
+    public LocalDateTime getDateDeparture() {
         return dateDeparture;
+    }
+
+    @Override
+    public String toString() {
+        return nameFlight +
+                "/ Wylot z miasta: " + departureTown +
+                "/ Przylot do miasta: " + arrivalTown +
+                "/ Data i godzina wylotu: " + dateDeparture;
     }
 
     @Override
