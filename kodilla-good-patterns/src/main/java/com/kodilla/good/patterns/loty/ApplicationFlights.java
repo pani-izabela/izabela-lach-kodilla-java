@@ -36,26 +36,29 @@ public class ApplicationFlights {
             flightSet.addFlight(flight10);
 
         System.out.println("Wyświetl wszystkie loty z Warszawy: ");
+        flightSet.getFlightsFrom("Warszawa");
 
-            flightSet.getFlightSet().stream()
+            /*flightSet.getFlightSet().stream()
                     .filter(f -> f.getDepartureTown().equals("Warszawa"))
                     .map(f->f.toString())
-                    .forEach(System.out::println);
+                    .forEach(System.out::println);*/
 
         System.out.println("\nWyświetl wszystkie loty do Gdańska: ");
+        flightSet.getFlightsTo("Gdańsk");
 
-            flightSet.getFlightSet().stream()
+            /*flightSet.getFlightSet().stream()
                     .filter(f -> f.getArrivalTown().equals("Gdańsk"))
                     .map(f->f.toString())
-                    .forEach(System.out::println);
+                    .forEach(System.out::println);*/
 
         System.out.println("\nWyświetl loty z Poznania do Rzeszowa (dozwolona przesiadka): ");
+        flightSet.getFlights("Poznań", "Rzeszów", "Kraków");
 
-        flightSet.getFlightSet().stream()
+        /*flightSet.getFlightSet().stream()
                 .filter(f -> f.getDepartureTown().equals("Poznań") || f.getArrivalTown().equals("Rzeszów"))
                 //.filter(f -> f.getArrivalTown().equals(f.getDepartureTown()))
                 .map(f->f.toString())
-                .forEach(System.out::println);
+                .forEach(System.out::println);*/
 
     }
 }
