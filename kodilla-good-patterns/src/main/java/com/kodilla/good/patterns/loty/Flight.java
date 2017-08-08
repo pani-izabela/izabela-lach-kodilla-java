@@ -33,10 +33,10 @@ public class Flight {
 
     @Override
     public String toString() {
-        return nameFlight +
+        return " " + nameFlight +
                 "/ Wylot z miasta: " + departureTown +
                 "/ Przylot do miasta: " + arrivalTown +
-                "/ Data i godzina wylotu: " + dateDeparture;
+                "/ Data i godzina wylotu: " + dateDeparture + "\n";
     }
 
     @Override

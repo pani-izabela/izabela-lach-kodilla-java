@@ -4,6 +4,7 @@ import com.kodilla.good.patterns.challenges.LocalDataTime;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
@@ -36,29 +37,15 @@ public class ApplicationFlights {
             flightSet.addFlight(flight10);
 
         System.out.println("Wyświetl wszystkie loty z Warszawy: ");
-        flightSet.getFlightsFrom("Warszawa");
-
-            /*flightSet.getFlightSet().stream()
-                    .filter(f -> f.getDepartureTown().equals("Warszawa"))
-                    .map(f->f.toString())
-                    .forEach(System.out::println);*/
+        Set<Flight> flightsFrom = flightSet.getFlightsFrom("Warszawa");
+        System.out.println(flightsFrom);
 
         System.out.println("\nWyświetl wszystkie loty do Gdańska: ");
-        flightSet.getFlightsTo("Gdańsk");
-
-            /*flightSet.getFlightSet().stream()
-                    .filter(f -> f.getArrivalTown().equals("Gdańsk"))
-                    .map(f->f.toString())
-                    .forEach(System.out::println);*/
+        Set<Flight> flightsTo = flightSet.getFlightsTo("Gdańsk");
+        System.out.println(flightsTo);
 
         System.out.println("\nWyświetl loty z Poznania do Rzeszowa (dozwolona przesiadka): ");
-        flightSet.getFlights("Poznań", "Rzeszów", "Kraków");
-
-        /*flightSet.getFlightSet().stream()
-                .filter(f -> f.getDepartureTown().equals("Poznań") || f.getArrivalTown().equals("Rzeszów"))
-                //.filter(f -> f.getArrivalTown().equals(f.getDepartureTown()))
-                .map(f->f.toString())
-                .forEach(System.out::println);*/
-
+        Set<Flight> flightsChange = flightSet.getFlights("Poznań", "Rzeszów");
+        System.out.println(flightsChange);
     }
 }
