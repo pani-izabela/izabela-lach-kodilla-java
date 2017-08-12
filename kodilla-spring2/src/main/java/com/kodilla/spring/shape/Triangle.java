@@ -1,4 +1,4 @@
-package com.kodilla.com.kodilla.spring.shape;
+package com.kodilla.spring.shape;
 
 import org.springframework.stereotype.Component;
 
