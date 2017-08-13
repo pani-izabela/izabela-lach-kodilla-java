@@ -1,7 +1,5 @@
 package com.kodilla.spring.forum;
 
-import com.kodilla.spring.shape.Circle;
-import com.kodilla.spring.shape.Shape;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,15 +10,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class SpringRunnerTestSuite {
+public class ForumUserTestSuite {
     @Test
     public void testGetUsername(){
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
-        ForumUser forumUser = context.getBean(ForumUser.class);
+        User user = context.getBean(ForumUser.class);
         //When
-        String name = forumUser.getUsername();
+        String name = user.getUserName();
         //Then
         Assert.assertEquals("John Smith", name);
     }

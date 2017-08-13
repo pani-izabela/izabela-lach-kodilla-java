@@ -3,14 +3,16 @@ package com.kodilla.spring.forum;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ForumUser {
+public class ForumUser implements User {
     private String username;
 
     public ForumUser(String username) {
         this.username = "John Smith";
     }
 
-    public String getUsername() {
-        return username;
+
+    @Override
+    public String getUserName() {
+        return null;
     }
 }
