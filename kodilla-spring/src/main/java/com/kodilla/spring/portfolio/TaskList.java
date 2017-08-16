@@ -9,8 +9,4 @@ public class TaskList {
     public TaskList() {
         this.tasks = new ArrayList<>();
     }
-
-    public boolean addTask(){
-        return tasks.add("task1");
-    }
 }

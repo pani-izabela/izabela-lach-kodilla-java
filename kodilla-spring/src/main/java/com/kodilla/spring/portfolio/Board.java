@@ -7,7 +7,7 @@ public class Board {
     private List<TaskList> inProgressList ;
     private List<TaskList> doneList;
 
-    public Board(TaskList taskList) {
+    public Board() {
         this.toDoList = toDoList;
         this.inProgressList = inProgressList;
         this.doneList = doneList;
