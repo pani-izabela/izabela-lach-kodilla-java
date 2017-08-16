@@ -9,4 +9,11 @@ public class TaskList {
     public TaskList() {
         this.tasks = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+        return "TaskList{" +
+                "tasks=" + tasks +
+                '}';
+    }
 }

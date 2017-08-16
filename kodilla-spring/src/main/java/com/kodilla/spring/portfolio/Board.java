@@ -1,31 +1,38 @@
 package com.kodilla.spring.portfolio;
 
-import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
 public class Board {
-    private List<TaskList> toDoList;
-    private List<TaskList> inProgressList ;
-    private List<TaskList> doneList;
 
-    public Board(List<TaskList> toDoList, List<TaskList> inProgressList, List<TaskList> doneList) {
+    private TaskList toDoList;
+    private TaskList inProgressList ;
+    private TaskList doneList;
+
+    public Board(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
         this.toDoList = toDoList;
         this.inProgressList = inProgressList;
         this.doneList = doneList;
     }
 
-    public List<TaskList> getToDoList() {
+    public TaskList getToDoList() {
         return toDoList;
     }
 
-    public List<TaskList> getInProgressList() {
+    public TaskList getInProgressList() {
         return inProgressList;
     }
 
-    public List<TaskList> getDoneList() {
+    public TaskList getDoneList() {
         return doneList;
     }
 
-
+    @Override
+    public String toString() {
+        return "Board{" +
+                "toDoList=" + toDoList +
+                ", inProgressList=" + inProgressList +
+                ", doneList=" + doneList +
+                '}';
+    }
 }

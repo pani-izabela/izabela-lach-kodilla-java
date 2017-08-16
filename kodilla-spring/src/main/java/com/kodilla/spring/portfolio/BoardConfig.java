@@ -6,12 +6,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Configuration
 public class BoardConfig {
-    TaskList taskList;
+    @Autowired
+    @Qualifier ("list1")
+    TaskList toDoList;
+    @Qualifier ("list2")
+    TaskList inProgressList;
+    @Qualifier ("list3")
+    TaskList doneList;
 
     @Bean(name = "list1")
     @Scope("prototype")
