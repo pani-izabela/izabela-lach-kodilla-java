@@ -1,5 +1,7 @@
 package com.kodilla.spring.portfolio;
 
+import org.springframework.context.annotation.Configuration;
+
 import java.util.List;
 
 public class Board {

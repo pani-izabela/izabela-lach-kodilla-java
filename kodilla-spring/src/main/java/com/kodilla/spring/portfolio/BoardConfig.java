@@ -1,14 +1,16 @@
 package com.kodilla.spring.portfolio;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
 public class BoardConfig {
-
     TaskList taskList;
 
     @Bean(name = "list1")
@@ -31,6 +33,6 @@ public class BoardConfig {
 
     @Bean (name = "bord")
     public Board getBoard(){
-        return new Board();
+        return new Board(getTasksFirst(), getTasksSecond(), getTasksThird());
     }
 }
