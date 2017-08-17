@@ -10,6 +10,10 @@ public class TaskList {
         this.tasks = new ArrayList<>();
     }
 
+    public List<String> getTasks() {
+        return tasks;
+    }
+
     @Override
     public String toString() {
         return "TaskList{" +

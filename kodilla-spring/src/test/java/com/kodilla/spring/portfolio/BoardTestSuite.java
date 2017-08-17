@@ -1,6 +1,7 @@
 package com.kodilla.spring.portfolio;
 
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,13 +27,19 @@ public class BoardTestSuite {
 
             Board board1 = context.getBean(Board.class);//pobieramy z kontenera beana typu Board
             System.out.println(board1);
-            //TaskList taskList1 = board1.getToDoList();
-            //System.out.println(taskList1);
+            TaskList toDoList = board1.getToDoList();
+            toDoList.getTasks().add("task to do");
 
+            TaskList inProgressList = board1.getInProgressList();
+            inProgressList.getTasks().add("task in progress");
 
+            TaskList doneList = board1.getDoneList();
+            doneList.getTasks().add("done task");
 
             //Then
-
+            Assert.assertEquals("task to do", board1.getToDoList().getTasks().get(0));
+            Assert.assertEquals("task in progress", board1.getInProgressList().getTasks().get(0));
+            Assert.assertEquals("done task", board1.getDoneList().getTasks().get(0));
 
 
     }
