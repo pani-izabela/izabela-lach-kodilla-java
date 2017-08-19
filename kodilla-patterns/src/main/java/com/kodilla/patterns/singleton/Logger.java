@@ -1,7 +1,7 @@
 package com.kodilla.patterns.singleton;
 
 public class Logger {
-    private static Logger logerInstance = null;
+    private static Logger loggerInstance = null;
     private String lastLog = "";
 
     private Logger() {
@@ -9,10 +9,10 @@ public class Logger {
     }
 
     public static Logger getInstance(){
-        if(logerInstance==null){
-            logerInstance = new Logger();
+        if(loggerInstance==null){
+            loggerInstance = new Logger();
         }
-        return logerInstance;
+        return loggerInstance;
     }
 
     public void log(String log) {

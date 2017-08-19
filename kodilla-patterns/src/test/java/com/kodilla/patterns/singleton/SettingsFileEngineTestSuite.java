@@ -6,7 +6,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SettingsFileEngineTestSuite {
-    private static SettingsFileEngine settingsFileEngine;
 
     @BeforeClass
     public static void openSettingsFile() {
