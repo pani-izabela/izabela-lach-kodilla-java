@@ -19,11 +19,27 @@ public class TaskFactoryTestSuite {
 
     @Test
     public void testPaintingTask(){
+        //Given
+        TaskFactory factory = new TaskFactory();
+        //When
+        Task taskPainting = factory.makeTask(TaskFactory.PAINTING);
+        //Then
+        Assert.assertEquals("Malowanie", taskPainting.getTaskName());
+        Assert.assertFalse(taskPainting.isTaskExecuted());
+        Assert.assertEquals("Do pomalowania jest ściana na kolor biały", taskPainting.executeTask());
 
     }
 
     @Test
     public void testDrivingTask(){
+        //Given
+        TaskFactory factory = new TaskFactory();
+        //When
+        Task taskDriving = factory.makeTask(TaskFactory.DRIVING);
+        //Then
+        Assert.assertEquals("Kierowanie", taskDriving.getTaskName());
+        Assert.assertFalse(taskDriving.isTaskExecuted());
+        Assert.assertEquals("Kurs do Gdańsk z pomocą ciężarówka", taskDriving.executeTask());
 
     }
 }
