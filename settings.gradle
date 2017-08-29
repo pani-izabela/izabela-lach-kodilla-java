@@ -5,8 +5,5 @@ include 'kodilla-good-patterns'
 include 'kodilla-spring-intro'
 include 'kodilla-spring-web'
 include 'kodilla-patterns'
-include ' kodilla-jdbc'
 include 'kodilla-jdbc'
-include 'kodilla-jdbcc'
-findProject(':kodilla-jdbcc')?.name = 'kodilla-jdbc'
 
