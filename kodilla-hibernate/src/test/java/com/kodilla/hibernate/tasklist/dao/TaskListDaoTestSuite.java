@@ -103,12 +103,14 @@ public class TaskListDaoTestSuite {
         List<Task> longTasks = taskDao.relativeLongTask();
         List<Task> shortTasks = taskDao.relativeShortTask();
         List<Task> enoughTimeTasks = taskDao.relativeTasksWithEnoughtTime();
+        List<Task> durationLongerThanTasks = taskDao.relativeTasksWithDurationLongerThan(6);
 
         //Then
         try {
             Assert.assertEquals(1, longTasks.size());
             Assert.assertEquals(3, shortTasks.size());
             Assert.assertEquals(3, enoughTimeTasks.size());
+            Assert.assertEquals(2, durationLongerThanTasks.size());
         } finally {
             //CleanUp
             taskListDao.delete(id);
