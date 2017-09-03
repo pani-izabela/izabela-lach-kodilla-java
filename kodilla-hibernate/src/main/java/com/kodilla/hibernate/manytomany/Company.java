@@ -5,7 +5,8 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 @NamedNativeQuery(name="Company.threeMarksCompany",
-query="SELECT * FROM COMPANY" + "WHERE LASTNAME=:LASTNAME")
+query="SELECT * FROM COMPANY" + "WHERE LASTNAME=:LASTNAME",
+resultClass = Company.class)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
