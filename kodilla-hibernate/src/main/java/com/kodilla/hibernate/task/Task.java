@@ -5,12 +5,11 @@ import com.kodilla.hibernate.tasklist.TaskList;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
-@NamedQueries({@NamedQuery(name="Task.relativeLongTask", query = "FROM Task WHERE duration>10"),
-        @NamedQuery(name="Task.relativeShortTask", query = "FROM Task WHERE duration <=10"),
-        @NamedQuery(name="Task.relativeTasksWithDurationLongerThan", query = "FROM Task WHERE duration > :DURATION")
+@NamedQueries({@NamedQuery(name="Task.retrieveLongTasks", query = "FROM Task WHERE duration>10"),
+        @NamedQuery(name="Task.retrieveShortTasks", query = "FROM Task WHERE duration <=10")
 })
-@NamedNativeQuery(name="Task.relativeTasksWithEnoughtTime", query="SELECT * FROM TASKS" +
-        "WHERE DATEDIFF(DATE_ADD(CREATED, INTERVAL DURATION DAY). NOW())>5",
+@NamedNativeQuery(name="Task.retrieveTasksWithEnoughTime", query="SELECT * FROM TASKS" +
+        "WHERE DATEDIFF(DATE_ADD(CREATED, INTERVAL DURATION DAY), NOW())>5",
         resultClass = Task.class)
 @Entity
 @Table(name = "TASKS")
@@ -75,19 +74,19 @@ public final class Task {
         this.taskFinancialDetails = taskFinancialDetails;
     }
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    private void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    private void setCreated(Date created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 
-    private void setDuration(int duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 }
