@@ -72,22 +72,6 @@ public class CompanyDaoTestSuite {
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
-
-        softwareMachine.getEmployees().add(johnSmith);
-        dataMaesters.getEmployees().add(stephanieClarckson);
-        dataMaesters.getEmployees().add(lindaKovalsky);
-        greyMatter.getEmployees().add(johnSmith);
-        greyMatter.getEmployees().add(lindaKovalsky);
-
-        johnSmith.getCompanies().add(softwareMachine);
-        johnSmith.getCompanies().add(greyMatter);
-        stephanieClarckson.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(greyMatter);
-
         employeeDao.save(johnSmith);
         int johnSmithId = johnSmith.getId();
         employeeDao.save(stephanieClarckson);
@@ -103,11 +87,8 @@ public class CompanyDaoTestSuite {
 
         //CleanUp
         employeeDao.delete(johnSmithId);
-
-    }
-
-    @Test
-    public void testNamedNativeQuery(){
+        employeeDao.delete(stephanieClarcksonId);
+        employeeDao.delete(lindaKovalskyID);
 
     }
 
