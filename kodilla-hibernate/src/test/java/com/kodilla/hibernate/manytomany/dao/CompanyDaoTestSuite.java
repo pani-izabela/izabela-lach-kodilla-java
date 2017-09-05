@@ -92,4 +92,30 @@ public class CompanyDaoTestSuite {
 
     }
 
+    @Test
+    public void testNamedNativeQuery(){
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        companyDao.save(softwareMachine);
+        int softwareMachineId = softwareMachine.getId();
+        companyDao.save(dataMaesters);
+        int dataMaestersId = dataMaesters.getId();
+        companyDao.save(greyMatter);
+        int greyMatterId = greyMatter.getId();
+
+        //When
+        List<Company> threeMarksCompany = companyDao.threeMarksCompany("Sof%");
+
+        //Then
+        Assert.assertEquals(1, threeMarksCompany.size());
+
+        //CleanUp
+        companyDao.delete(softwareMachineId);
+        companyDao.delete(dataMaestersId);
+        companyDao.delete(greyMatterId);
+
+    }
 }
