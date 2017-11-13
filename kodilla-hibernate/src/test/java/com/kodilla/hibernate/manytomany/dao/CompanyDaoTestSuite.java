@@ -107,7 +107,7 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //When
-        List<Company> threeMarksCompany = companyDao.threeMarksCompany("Sof%");
+        List<Company> threeMarksCompany = companyDao.threeMarksCompany("Sof");
 
         //Then
         Assert.assertEquals(1, threeMarksCompany.size());
