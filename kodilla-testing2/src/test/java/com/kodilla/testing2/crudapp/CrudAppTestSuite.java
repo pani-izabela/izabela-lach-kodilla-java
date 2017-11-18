@@ -77,8 +77,8 @@ public class CrudAppTestSuite {
 
         Thread.sleep(2000);
 
-        driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
-                .filter(aHref -> aHref.findElements(By.xpath(".//span[@title=\"Kodilla Board\"]")).size()>0)
+        driverTrello.findElements(By.xpath("//a[@class=\"board-title\"]")).stream()
+                .filter(aHref -> aHref.findElements(By.xpath(".//span[@title=\"Kodilla Application\"]")).size()>0)
                 .forEach(aHref -> aHref.click());
 
         Thread.sleep(2000);
@@ -93,7 +93,7 @@ public class CrudAppTestSuite {
         return result;
     }
 
-    private void deleteTask() throws InterruptedException {
+    private void deleteTask(String taskName) throws InterruptedException {
         final String XPATH_DELETE_BUTON = "/html/body/main/section[2]/div/form/div/fieldset[1]/button[4]";
 
         WebElement deleteButton = driver.findElement(By.xpath(XPATH_DELETE_BUTON));
@@ -107,7 +107,7 @@ public class CrudAppTestSuite {
         String taskName = createCrudAppTestTask();
         sendTestTaskToTrello(taskName);
         assertTrue(checkTaskExistsInTrello(taskName));
-        deleteTask();
+        deleteTask(taskName);
     }
 
     @After
