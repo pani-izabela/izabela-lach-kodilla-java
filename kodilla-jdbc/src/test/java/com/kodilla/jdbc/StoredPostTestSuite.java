@@ -14,7 +14,7 @@ public class StoredPostTestSuite {
     public void testUpdateVipLevels() throws SQLException{
         //Given
         DbManager dbManager = DbManager.getInstance();
-        String sqlUpdate = "UPDATE READERS SET VIP_LEVEL=\"Not set\"";
+        String sqlUpdate = "UPDATE readers SET VIP_LEVEL=\"Not set\"";
         Statement statment = dbManager.getConnection().createStatement();
         statment.executeUpdate(sqlUpdate);
 
@@ -23,7 +23,7 @@ public class StoredPostTestSuite {
         statment.execute(sqlProcedureCall);
 
         //Then
-        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM READERS WHERE VIP_LEVEL = \"Not set\"";
+        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM readers WHERE VIP_LEVEL = \"Not set\"";
         ResultSet rs = statment.executeQuery(sqlCheckTable);
         int howMany = -1;
         if(rs.next()){
@@ -32,11 +32,11 @@ public class StoredPostTestSuite {
         assertEquals(0, howMany);
     }
 
-    /*@Test
+    @Test
     public void testUpdateBestsellers() throws SQLException{
         //Given
         DbManager dbManager = DbManager.getInstance();
-        String sqlUpdate = "UPDATE BOOKS SET BESTSELLER=\"Not set\"";
+        String sqlUpdate = "UPDATE BOOKS SET BESTSELLER = false";
         Statement statment = dbManager.getConnection().createStatement();
         statment.executeUpdate(sqlUpdate);
 
@@ -45,12 +45,12 @@ public class StoredPostTestSuite {
         statment.execute(sqlProcedureCall);
 
         //Then
-        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY_BOOKS FROM BOOKS WHERE BESTSELLER = \"Not set\"";
+        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY_BOOKS FROM BOOKS WHERE BESTSELLER = false";
         ResultSet rs = statment.executeQuery(sqlCheckTable);
         int howMany = -1;
         if(rs.next()){
             howMany = rs.getInt("HOW_MANY_BOOKS");
         }
-        assertEquals(0, howMany);
-    }*/
+        assertEquals(3, howMany);
+    }
 }

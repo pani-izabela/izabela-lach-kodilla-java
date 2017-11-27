@@ -64,4 +64,27 @@ public class DbManagerTestSuite {
         statement.close();
         Assert.assertEquals(2, counter);
     }
+
+    @Test
+    public void testSelectBooks() throws SQLException {
+        //Given
+        DbManager dbManager = DbManager.getInstance();
+
+        //When
+        String sqlQuery = "SELECT * FROM BOOKS";
+        Statement statement = dbManager.getConnection().createStatement();
+        ResultSet rs = statement.executeQuery(sqlQuery);
+
+        //Then
+        int counter = 0;
+        while(rs.next()) {
+            System.out.println(rs.getInt("BOOK_ID") + ", " +
+                    rs.getString("TITLE") + ", " +
+                    rs.getString("PUBYEAR"));
+            counter++;
+        }
+        rs.close();
+        statement.close();
+        Assert.assertEquals(5, counter);
+    }
 }
